@@ -1,5 +1,10 @@
 import utils
 
+"""
+    Méthode permettant de verifier si la chaine fait 2 caracteres avec un char entre A et Z et un numéro
+    :param chaine (string qui contient la chaine a verifier)
+    :result bool (retourne si la condition est rempli)
+"""
 def verifSaisie(chaine: str):
     if len(chaine) == 2:
         if "A" <= chaine[0] <= "Z":
@@ -7,15 +12,25 @@ def verifSaisie(chaine: str):
                 return True
     return False
 
+"""
+    Méthode qui verifie qui ne reste plus aucunne allumette
+    :result bool (retourne si la condition est rempli)
+"""
 def verificationFinDePartie(matchs):
     for _, match in matchs.items():
         if(match > 0):
             return False
     return True
 
+"""
+    Méthode qui permet l'affichage des allumettes prend en parametre les allumetes ainsi que le nombre maximum d'allumettes
+"""
 def displayMatch(matchs, max = 9):
     for key, match in matchs.items():
         print(key + " "+ " " * (int((max - match)/2)) + "I"*match)
+
+
+
 if __name__ == '__main__':
     number_match = {"A":1,"B":3,"C":5, "D":7,"E":9}
     while True:
